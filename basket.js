@@ -42,12 +42,16 @@ function creaCodice(){
 // metto il codice creato dalla funzione "creacodice" in una variabile
 var codiceGiocatore = creaCodice();
 
-console.log(codiceGiocatore);
+// console.log(codiceGiocatore);
 
 // devo generare 100 codici diversi, quindi uso ciclo for per far
 // eseguire la funzione "creacodice" 100 volte
 
+var giocatori = [];
+
 for(var i = 0; i < 100; i++) {
   var codiceGiocatore = creaCodice();
-  console.log(codiceGiocatore);
+  giocatori.push(codiceGiocatore);
 };
+
+console.log(giocatori);
