@@ -20,8 +20,8 @@ function creaCodice(){
 // il codice identificativo (codeplayer) si compone di un numero di tre cifre
 // ovvero (casualNumber ripetuto 3 volte) e di tre lettere (casualLetter ripetuta 3 volte)
 
-   var codePlayer = "";
-   var casualNumber = "";
+   var codePlayer = '';
+   var casualNumber = '';
 
    for (var i = 0; i < 3; i++) {
      //Genero una lettera casuale maiuscola prendendo i valori dall'unicode
@@ -36,15 +36,7 @@ function creaCodice(){
    }
 
    return codePlayer;
-}
-
-// metto il codice creato dalla funzione "creacodice" in una variabile
-var codiceGiocatore = creaCodice();
-
-// console.log(codiceGiocatore);
-
-// devo generare 100 codici diversi, quindi uso ciclo for per far
-// eseguire la funzione "creacodice" 100 volte
+};
 
 // creo array vuoto per i giocatori
 var giocatori = [];
@@ -123,6 +115,9 @@ for (var i = 0; i < 100; i++) {
 // e inserisco nell'array vuoto "giocatori" ogni singolo oggetto "player"
   giocatori.push(player);
 
-}
+};
 
 console.log(giocatori);
+
+// devo terminare! Devo creare nell'HTML una lista con i vari giocatori e fare sì
+// che cliccando su ogni giocatore si vedano le sue statistiche
