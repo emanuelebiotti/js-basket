@@ -46,15 +46,8 @@ var codiceGiocatore = creaCodice();
 // devo generare 100 codici diversi, quindi uso ciclo for per far
 // eseguire la funzione "creacodice" 100 volte
 
-// creo array vuoto per i giocatori e ci spingo dentro i singoli codici creati
+// creo array vuoto per i giocatori
 var giocatori = [];
-
-for(var i = 0; i < 100; i++) {
-  var codiceGiocatore = creaCodice();
-  giocatori.push(codiceGiocatore);
-};
-
-console.log(giocatori);
 
 //ora devo creare il singolo oggetto player per identificare il singolo giocatore
 // e le sue varie statistiche:
@@ -116,7 +109,8 @@ function randomTiri3() {
 
 //oppure posso farlo con ciclo for
 for (var i = 0; i < 100; i++) {
-  var giocatori = [];
+
+  // var giocatori = [];
   var player = {
     'codice': creaCodice(),
     'punti': randomPunti(),
@@ -124,13 +118,10 @@ for (var i = 0; i < 100; i++) {
     'falli': randomfalli(),
     'tiri da 2 punti': randomTiri2(),
     'tiri da 3 punti': randomTiri3()
-  };
+  }
 
-// e devo pushare per 100 volte ogni singolo oggetto player nell'array giocatori
-// quindi nidifico un altro ciclo for nel ciclo for
-for (var j = 0; j < 100; j++) {
+// e inserisco nell'array vuoto "giocatori" ogni singolo oggetto "player"
   giocatori.push(player);
-};
 
 }
 
