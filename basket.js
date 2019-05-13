@@ -60,6 +60,7 @@ console.log(giocatori);
 // e le sue varie statistiche:
 
 var player = {
+  'codice': '',
   'punti': '',
   'rimbalzi': '',
   'falli': '',
@@ -72,22 +73,65 @@ console.log(player);
 //creo le varie funzioni per generare le statistiche dei giocatori:
 
 function randomPunti() {
-  Math.floor(Math.random()*500);
+  var punti = Math.floor(Math.random()*500);
   return punti;
 };
 function randomRimbalzi() {
-  Math.floor(Math.random()*500);
+  var rimbalzi = Math.floor(Math.random()*500);
   return rimbalzi;
 };
 function randomfalli() {
-  Math.floor(Math.random()*500);
+  var falli = Math.floor(Math.random()*500);
   return falli;
 };
 function randomTiri2() {
-  Math.floor(Math.random()*500);
+  var tiri2 = Math.floor(Math.random()*500);
   return tiri2;
 };
 function randomTiri3() {
-  Math.floor(Math.random()*500);
+  var tiri3 = Math.floor(Math.random()*500);
   return tiri3;
 };
+
+// Ora devo assegnare ciò che le funzioni ritornano alle varie
+// proprietà dell'oggetto Giocatore, e devo fare il tutto per 100 volte
+
+//posso farlo con ciclo while
+
+// var i = 0;
+// while (i<100) {
+//
+//   var player = {
+//     'bla': randomPunti(),
+//     'rimbalzi': randomRimbalzi() ,
+//     'falli': randomfalli(),
+//     'tiri da 2 punti': randomTiri2(),
+//     'tiri da 3 punti': randomTiri3()
+//   };
+//
+//   i++;
+// }
+//
+// console.log(player);
+
+//oppure posso farlo con ciclo for
+for (var i = 0; i < 100; i++) {
+  var giocatori = [];
+  var player = {
+    'codice': creaCodice(),
+    'punti': randomPunti(),
+    'rimbalzi': randomRimbalzi() ,
+    'falli': randomfalli(),
+    'tiri da 2 punti': randomTiri2(),
+    'tiri da 3 punti': randomTiri3()
+  };
+
+// e devo pushare per 100 volte ogni singolo oggetto player nell'array giocatori
+// quindi nidifico un altro ciclo for nel ciclo for
+for (var j = 0; j < 100; j++) {
+  giocatori.push(player);
+};
+
+}
+
+console.log(giocatori);
