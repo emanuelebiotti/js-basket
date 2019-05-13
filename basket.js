@@ -36,7 +36,6 @@ function creaCodice(){
    }
 
    return codePlayer;
-
 }
 
 // metto il codice creato dalla funzione "creacodice" in una variabile
@@ -47,6 +46,7 @@ var codiceGiocatore = creaCodice();
 // devo generare 100 codici diversi, quindi uso ciclo for per far
 // eseguire la funzione "creacodice" 100 volte
 
+// creo array vuoto per i giocatori e ci spingo dentro i singoli codici creati
 var giocatori = [];
 
 for(var i = 0; i < 100; i++) {
@@ -55,3 +55,39 @@ for(var i = 0; i < 100; i++) {
 };
 
 console.log(giocatori);
+
+//ora devo creare il singolo oggetto player per identificare il singolo giocatore
+// e le sue varie statistiche:
+
+var player = {
+  'punti': '',
+  'rimbalzi': '',
+  'falli': '',
+  'tiri da 2 punti': '',
+  'tiri da 3 punti': ''
+};
+
+console.log(player);
+
+//creo le varie funzioni per generare le statistiche dei giocatori:
+
+function randomPunti() {
+  Math.floor(Math.random()*500);
+  return punti;
+};
+function randomRimbalzi() {
+  Math.floor(Math.random()*500);
+  return rimbalzi;
+};
+function randomfalli() {
+  Math.floor(Math.random()*500);
+  return falli;
+};
+function randomTiri2() {
+  Math.floor(Math.random()*500);
+  return tiri2;
+};
+function randomTiri3() {
+  Math.floor(Math.random()*500);
+  return tiri3;
+};
