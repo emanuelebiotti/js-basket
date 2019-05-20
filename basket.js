@@ -13,6 +13,8 @@
 // Una volta cliccato sul codice giocatore, nel corpo principale verranno
 // visualizzate le statistiche corrispondenti.
 
+$(document).ready(function(){
+
 
 //devo creare una funzione per generare il codice identificativo dei giocatori
 function creaCodice(){
@@ -124,6 +126,12 @@ for (var k=0; k<giocatori.length; k++){
   $('.elencoGiocatori').append('<option class="singologiocatore" value="'+giocatori[k].codice+'">'+giocatori[k].codice+'</option>');
 }
 
+$('.elencoGiocatori').change(function(){
+  var selected_code = $(this).val();
+  $('.player_code_container').text(selected_code);
 
+
+})
 // devo terminare! Devo creare nell'HTML una lista con i vari giocatori e fare sì
 // che cliccando su ogni giocatore si vedano le sue statistiche
+});
