@@ -126,12 +126,18 @@ for (var k=0; k<giocatori.length; k++){
   $('.elencoGiocatori').append('<option class="singologiocatore" value="'+giocatori[k].codice+'">'+giocatori[k].codice+'</option>');
 }
 
-$('.elencoGiocatori').change(function(){
-  var selected_code = $(this).val();
-  $('.player_code_container').text(selected_code);
 
+$('.elencoGiocatori').change(function(){
+
+  var selected_code = $(this).val();
+  $('.player_code_container').children('span').text(selected_code);
+
+  // devo mettere nel paragrafo "punti fatti i punti del signolo giocatore"
+  $('.puntifatti span').text()
 
 })
-// devo terminare! Devo creare nell'HTML una lista con i vari giocatori e fare sì
-// che cliccando su ogni giocatore si vedano le sue statistiche
+
+// Devo fare sì che cliccando su ogni giocatore si vedano le sue statistiche
+
+
 });
