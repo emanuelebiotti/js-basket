@@ -99,6 +99,7 @@ function randomTiri3() {
 //
 // console.log(player);
 
+
 //oppure posso farlo con ciclo for
 for (var i = 0; i < 100; i++) {
 
@@ -118,6 +119,11 @@ for (var i = 0; i < 100; i++) {
 };
 
 console.log(giocatori);
+
+for (var k=0; k<giocatori.length; k++){
+  $('.elencoGiocatori').append('<option class="singologiocatore" value="'+giocatori[k].codice+'">'+giocatori[k].codice+'</option>');
+}
+
 
 // devo terminare! Devo creare nell'HTML una lista con i vari giocatori e fare sì
 // che cliccando su ogni giocatore si vedano le sue statistiche
