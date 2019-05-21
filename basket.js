@@ -51,8 +51,8 @@ var player = {
   'punti': '',
   'rimbalzi': '',
   'falli': '',
-  'tiri da 2 punti': '',
-  'tiri da 3 punti': ''
+  'tiri_da_2_punti': '',
+  'tiri_da_3_punti': ''
 };
 
 console.log(player);
@@ -111,8 +111,8 @@ for (var i = 0; i < 100; i++) {
     'punti': randomPunti(),
     'rimbalzi': randomRimbalzi() ,
     'falli': randomfalli(),
-    'tiri da 2 punti': randomTiri2(),
-    'tiri da 3 punti': randomTiri3()
+    'tiri_da_2_punti': randomTiri2(),
+    'tiri_da_3_punti': randomTiri3()
   }
 
 // e inserisco nell'array vuoto "giocatori" ogni singolo oggetto "player"
@@ -123,18 +123,18 @@ for (var i = 0; i < 100; i++) {
 console.log(giocatori);
 
 for (var k=0; k<giocatori.length; k++){
-  $('.elencoGiocatori').append('<option class="singologiocatore" value="'+giocatori[k].codice+'">'+giocatori[k].codice+'</option>');
+  $('.elencoGiocatori').append('<option class="singologiocatore" value="'+k+'">'+giocatori[k].codice+'</option>');
 }
 
 
 $('.elencoGiocatori').change(function(){
-
-  var selected_code = $(this).val();
-  $('.player_code_container').children('span').text(selected_code);
-
-  // devo mettere nel paragrafo "punti fatti i punti del signolo giocatore"
-  $('.puntifatti span').text()
-
+  var selected = $(this).val();
+  console.log(giocatori[selected]);
+  $('.puntifatti span').text(giocatori[selected].punti);
+  $('.rimbalzi span').text(giocatori[selected].rimbalzi);
+  $('.falli span').text(giocatori[selected].falli);
+  $('.tiri2 span').text(giocatori[selected].tiri_da_2_punti);
+  $('.tiri3 span').text(giocatori[selected].tiri_da_3_punti);
 })
 
 // Devo fare sì che cliccando su ogni giocatore si vedano le sue statistiche
